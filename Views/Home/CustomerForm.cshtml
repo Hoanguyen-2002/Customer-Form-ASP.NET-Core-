@@ -1,0 +1,38 @@
+﻿@model Customers.Models.Customer
+@{
+    ViewData["Title"] = "Home Page";
+}
+
+<div class="text-center">
+    <h1 class="display-4">Customer Form</h1>
+    
+    <form asp-action="CustomerForm" method="post">
+        <div asp-validation-summary="All"></div>
+        <div class="mb-3">
+            <label asp-for="FirstName" class="form-label">First Name:</label>
+            <input asp-for="FirstName" class="form-control" />
+        </div>
+
+        <div class="mb-3">
+            <label asp-for="LastName" class="form-label">Last Name:</label>
+            <input asp-for="LastName" class="form-control" />
+        </div>
+
+        <div class="mb-3">
+            <label asp-for="Email" class="form-label">Email:</label>
+            <input type="text" asp-for="Email" class="form-control" />
+        </div>
+
+        <div class="mb-3">
+            <label asp-for="WillBuyAgain" class="form-label">Will you buy again?</label>
+            <select asp-for="WillBuyAgain" class="form-control">
+                <option value="">Choose an option</option>
+                <option value="true">Yes</option>
+                <option value="false">No</option>
+            </select>
+        </div>
+
+        <button class="btn btn-primary">Submit</button>
+
+    </form>
+</div>

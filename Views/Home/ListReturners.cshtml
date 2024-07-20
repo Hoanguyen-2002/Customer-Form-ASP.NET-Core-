@@ -1,0 +1,30 @@
+﻿@model IEnumerable<Customers.Models.Customer>
+
+@{
+    ViewData["Title"] = "Home Page";
+}
+
+<div class="text-center">
+    <h1 class="display-4">Returning Customers</h1>
+
+    <table class="table mt-3">
+        <thead>
+            <tr>
+                <th>First Name</th>
+                <th>Last Name</th>
+                <th>Email</th>
+            </tr>
+        </thead>
+
+        <tbody>
+            @foreach(Customers.Models.Customer r in Model)
+            {
+                <tr>
+                    <td>@r.FirstName</td>
+                    <td>@r.LastName</td>
+                    <td>@r.Email</td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>

@@ -1,0 +1,23 @@
+﻿@model Customers.Models.Customer
+
+@{
+    ViewData["Title"] = "Home Page";
+}
+
+<div class="text-center">
+    <h1 class="display-4">Thank you, @Model?.FirstName</h1>
+
+    @if(Model?.WillBuyAgain == true)
+    {
+        @:Thank you for your support!
+    }
+    else
+    {
+        @:We are sorry to hear that.
+        @:Please let us know how can we improve!
+    }
+
+    <p>
+        <a asp-action="ListReturners">List of returning customers</a>
+    </p>
+</div>
